@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.unik.autotest.CalculatorTest$AdditionTests" time="0.058" tests="16" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="D:\Уник\automate-testing\Lab_1\lab1-calculator\target\test-classes;D:\Уник\automate-testing\Lab_1\lab1-calculator\target\classes;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\SF\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\SF\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\SF\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\SF\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Samara"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\SF\AppData\Local\Temp\surefire10295586111758479108\surefirebooter-20260227153635737_3.jar C:\Users\SF\AppData\Local\Temp\surefire10295586111758479108 2026-02-27T15-36-35_572-jvmRun1 surefire-20260227153635737_1tmp surefire_0-20260227153635737_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Уник\automate-testing\Lab_1\lab1-calculator\target\test-classes;D:\Уник\automate-testing\Lab_1\lab1-calculator\target\classes;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\SF\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\SF\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\SF\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\SF\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\SF\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\SF"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Уник\automate-testing\Lab_1\lab1-calculator"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\SF\AppData\Local\Temp\surefire10295586111758479108\surefirebooter-20260227153635737_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.18+8"/>
+    <property name="user.name" value="SF"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.18+8"/>
+    <property name="localRepository" value="C:\Users\SF\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\SF\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="user.dir" value="D:\Уник\automate-testing\Lab_1\lab1-calculator"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\dotnet\;C:\Users\SF\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\JDK.java\jdk-17.0.12\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\apache-maven-3.9.9\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;D:\cmake\bin;D:\sqlite;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Cloudflare\Cloudflare WARP\;D:\qpdf-12.2.0-mingw64\bin;D:\PDFtk Server\bin\;D:\poppler-24.08.0\Library\bin;D:\poppler-24.08.0\Library\lib;D:\MYSYS\mingw64\bin;D:\exiftool-13.31_64\exiftool.exe;D:\установщики\Gpg4win\..\GnuPG\bin;C:\Program Files\Docker\Docker\resources\bin;D:\tools\maven\apache-maven-3.9.12\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\dotnet\;C:\Users\SF\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\JDK.java\jdk-17.0.12\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Docker\Docker\resources\bin;C:\apache-maven-3.9.9\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\;D:\cmake\bin;D:\sqlite;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Cloudflare\Cloudflare WARP\;D:\qpdf-12.2.0-mingw64\bin;D:\PDFtk Server\bin\;D:\poppler-24.08.0\Library\bin;D:\poppler-24.08.0\Library\lib;D:\MYSYS\mingw64\bin;D:\exiftool-13.31_64\exiftool.exe;C:\Users\SF\scoop\shims;C:\Users\SF\AppData\Local\Programs\Python\Python310\;C:\Users\SF\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\SF\AppData\Local\Microsoft\WindowsApps;C:\Users\SF\.dotnet\tools;C:\Users\SF\AppData\Roaming\npm;D:\JDK.java\jdk-17.0.12;C:\Program Files\heroku\bin;D:\AndroidSDK\platform-tools;D:\AndroidSDK\emulator;D:\AndroidSDK\platform-tools;D:\AndroidSDK\emulator;C:\Users\SF\AppData\Local\Programs\Microsoft VS Code\bin;c:\Users\SF\.vscode\extensions\vscjava.vscode-java-debug-0.58.5\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.18+8"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="test_add_csvSource(Radix, String, String, String)[1]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_csvSource(Radix, String, String, String)[2]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_csvSource(Radix, String, String, String)[3]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_csvSource(Radix, String, String, String)[4]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[1]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.002"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[2]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[3]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[4]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.0"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[5]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[6]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[7]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[8]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[9]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[10]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.0"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[11]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.0"/>
+  <testcase name="test_add_fromFile(String, String, String, String, String)[12]" classname="com.unik.autotest.CalculatorTest$AdditionTests" time="0.001"/>
+</testsuite>

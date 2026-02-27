@@ -1,0 +1,13 @@
+radix,left,op,right,expected
+BIN,0,+,0,0
+BIN,1,+,1,10
+BIN,101,+,11,1000
+OCT,7,+,1,10
+OCT,10,+,7,17
+OCT,77,+,1,100
+DEC,0,+,0,0
+DEC,2,+,3,5
+DEC,100,+,23,123
+HEX,A,+,5,F
+HEX,FF,+,1,100
+HEX,10,+,10,20

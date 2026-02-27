@@ -1,0 +1,5 @@
+com\unik\autotest\CalculatorTest$AdditionTests.class
+com\unik\autotest\CalculatorTest$SubtractionTests.class
+com\unik\autotest\CalculatorTest$DivisionTests.class
+com\unik\autotest\CalculatorTest$MultiplicationTests.class
+com\unik\autotest\CalculatorTest.class
