@@ -1,0 +1,8 @@
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\CucumberSpringConfig.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\hooks\DbHooks.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\RunCucumberTest.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\steps\ApiSteps.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\steps\DbSteps.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\steps\DtoTypes.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\bdd\steps\TableClassSteps.java
+D:\Уник\automate-testing\labs-tests\src\test\java\com\unik\calculator\CalculatorIT.java

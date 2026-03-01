@@ -1,0 +1,17 @@
+com\unik\calculator\bdd\steps\DbSteps.class
+com\unik\calculator\bdd\hooks\DbHooks$1.class
+com\unik\calculator\CalculatorIT$1.class
+com\unik\calculator\bdd\CucumberSpringConfig.class
+com\unik\calculator\bdd\steps\DbSteps$1.class
+com\unik\calculator\bdd\hooks\DbHooks.class
+com\unik\calculator\bdd\steps\ApiSteps$2.class
+com\unik\calculator\CalculatorIT$3.class
+com\unik\calculator\bdd\steps\DtoTypes.class
+com\unik\calculator\bdd\steps\ApiSteps$1.class
+com\unik\calculator\bdd\steps\ApiSteps$3.class
+com\unik\calculator\bdd\steps\ApiSteps.class
+com\unik\calculator\bdd\steps\TableClassSteps.class
+com\unik\calculator\bdd\RunCucumberTest.class
+com\unik\calculator\CalculatorIT.class
+com\unik\calculator\bdd\steps\DtoTypes$Operand.class
+com\unik\calculator\CalculatorIT$2.class

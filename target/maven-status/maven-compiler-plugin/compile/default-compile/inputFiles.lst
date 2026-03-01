@@ -1,0 +1,12 @@
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\ApiError.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\CalculatorController.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\dto\CalcRequest.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\dto\CalcResponse.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\dto\CalculationDto.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\api\GlobalExceptionHandler.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\core\Calculator.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\core\Operation.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\core\Radix.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\db\CalculationEntity.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\db\CalculationRepository.java
+D:\Уник\automate-testing\labs-tests\src\main\java\com\unik\calculator\Lab2CalculatorServiceApplication.java

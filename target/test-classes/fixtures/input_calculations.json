@@ -1,0 +1,32 @@
+﻿[
+  {
+    "leftValue":"101",
+    "leftRadix":"BIN",
+    "rightValue":"A",
+    "rightRadix":"HEX",
+    "operation":"ADD",
+    "resultValue":"15",
+    "resultRadix":"DEC",
+    "createdAt":"2026-02-27T00:00:00Z"
+  },
+  {
+    "leftValue":"10",
+    "leftRadix":"DEC",
+    "rightValue":"7",
+    "rightRadix":"DEC",
+    "operation":"SUB",
+    "resultValue":"3",
+    "resultRadix":"DEC",
+    "createdAt":"2026-02-27T01:00:00Z"
+  },
+  {
+    "leftValue":"11",
+    "leftRadix":"BIN",
+    "rightValue":"10",
+    "rightRadix":"BIN",
+    "operation":"MUL",
+    "resultValue":"110",
+    "resultRadix":"BIN",
+    "createdAt":"2026-02-27T02:00:00Z"
+  }
+]

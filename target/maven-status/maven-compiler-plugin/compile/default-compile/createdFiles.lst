@@ -1,0 +1,14 @@
+com\unik\calculator\api\dto\CalcResponse.class
+com\unik\calculator\db\CalculationEntity.class
+com\unik\calculator\core\Operation.class
+com\unik\calculator\api\GlobalExceptionHandler.class
+com\unik\calculator\Lab2CalculatorServiceApplication.class
+com\unik\calculator\api\dto\CalcRequest.class
+com\unik\calculator\core\Radix.class
+com\unik\calculator\core\Calculator.class
+com\unik\calculator\api\ApiError.class
+com\unik\calculator\core\Calculator$1.class
+com\unik\calculator\api\dto\CalculationDto.class
+com\unik\calculator\api\dto\CalcRequest$Operand.class
+com\unik\calculator\db\CalculationRepository.class
+com\unik\calculator\api\CalculatorController.class
