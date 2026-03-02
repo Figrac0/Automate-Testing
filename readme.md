@@ -1,25 +1,25 @@
 ## Preview
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/1.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/1.png" alt="nahhh" width="600"/><br/>
   
 </p>
 
 ---
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/2.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/2.png" alt="nahhh" width="600"/><br/>
   
 </p>
 
 ---
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/3.png" alt="nahhh" width="400"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/3.png" alt="nahhh" width="300"/><br/>
   
 </p>
 
 ---
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/4.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/4.png" alt="nahhh" width="600"/><br/>
   
 </p>
 
