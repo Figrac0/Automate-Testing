@@ -140,22 +140,14 @@ This work confirms the importance of load testing for determining system scalabi
 ---
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/2.png.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/2.png" alt="nahhh" width="800"/><br/>
   
 </p>
 
 ---
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/3.png.png" alt="nahhh" width="800"/><br/>
-  
-</p>
-
-
----
-
-<p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/4.png.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/3.png" alt="nahhh" width="800"/><br/>
   
 </p>
 
@@ -163,7 +155,7 @@ This work confirms the importance of load testing for determining system scalabi
 ---
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/16.png.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/4.png" alt="nahhh" width="800"/><br/>
   
 </p>
 
@@ -171,7 +163,15 @@ This work confirms the importance of load testing for determining system scalabi
 ---
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/17.png.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/16.png" alt="nahhh" width="800"/><br/>
+  
+</p>
+
+
+---
+
+<p align="center">
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/17.png" alt="nahhh" width="800"/><br/>
   
 </p>
 
@@ -180,7 +180,7 @@ This work confirms the importance of load testing for determining system scalabi
 
 
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/19.png.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/19.png" alt="nahhh" width="800"/><br/>
   
 </p>
 
