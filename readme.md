@@ -13,7 +13,7 @@
 
 ---
 <p align="center">
-  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/3.png" alt="nahhh" width="800"/><br/>
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/3.png" alt="nahhh" width="400"/><br/>
   
 </p>
 
