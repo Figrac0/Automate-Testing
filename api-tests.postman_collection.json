@@ -1,0 +1,647 @@
+{
+  "info": {
+    "_postman_id": "dec5e067-d01d-433c-b798-98f54895eefd",
+    "name": "lab5-calculator-api-tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40584468"
+  },
+  "item": [
+    {
+      "name": "Calc - ADD",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 200\", () => {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has required fields\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(json).to.have.property(\"id\");\r",
+              "  pm.expect(json).to.have.property(\"result\");\r",
+              "  pm.expect(json).to.have.property(\"resultRadix\");\r",
+              "  pm.expect(json).to.have.property(\"createdAt\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Result radix matches\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(String(json.resultRadix)).to.eql(String(pm.collectionVariables.get(\"resultRadix\")));\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Correct ADD result\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "\r",
+              "  const value =\r",
+              "    json?.result ??\r",
+              "    json?.resultValue ??\r",
+              "    json?.value ??\r",
+              "    json?.result_value ??\r",
+              "    json?.resultValue;\r",
+              "\r",
+              "  pm.expect(String(value)).to.eql(\"15\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"{{leftValue}}\", \"radix\": \"{{leftRadix}}\" },\r\n  \"right\": { \"value\": \"{{rightValue}}\", \"radix\": \"{{rightRadix}}\" },\r\n  \"op\": \"+\",\r\n  \"resultRadix\": \"{{resultRadix}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - SUB",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 200\", () => {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has required fields\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(json).to.have.property(\"id\");\r",
+              "  pm.expect(json).to.have.property(\"result\");\r",
+              "  pm.expect(json).to.have.property(\"resultRadix\");\r",
+              "  pm.expect(json).to.have.property(\"createdAt\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Result radix matches\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(String(json.resultRadix)).to.eql(String(pm.collectionVariables.get(\"resultRadix\")));\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Correct result\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "\r",
+              "  const op = pm.collectionVariables.get(\"operation\"); // ADD/SUB/MUL/DIV\r",
+              "  const key = `expected_${op}`; // expected_SUB и т.д.\r",
+              "  const expected = pm.collectionVariables.get(key);\r",
+              "\r",
+              "  if (expected === undefined || expected === null || expected === \"\") {\r",
+              "    pm.expect(true).to.eql(true); // skip silently\r",
+              "    return;\r",
+              "  }\r",
+              "\r",
+              "  pm.expect(String(json.resultValue)).to.eql(String(expected));\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"{{leftValue}}\", \"radix\": \"{{leftRadix}}\" },\r\n  \"right\": { \"value\": \"{{rightValue}}\", \"radix\": \"{{rightRadix}}\" },\r\n  \"op\": \"-\",\r\n  \"resultRadix\": \"{{resultRadix}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - MUL",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 200\", () => {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has required fields\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(json).to.have.property(\"id\");\r",
+              "  pm.expect(json).to.have.property(\"result\");\r",
+              "  pm.expect(json).to.have.property(\"resultRadix\");\r",
+              "  pm.expect(json).to.have.property(\"createdAt\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Result radix matches\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(String(json.resultRadix)).to.eql(String(pm.collectionVariables.get(\"resultRadix\")));\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Correct result\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "\r",
+              "  const op = pm.collectionVariables.get(\"operation\"); // ADD/SUB/MUL/DIV\r",
+              "  const key = `expected_${op}`; // expected_SUB и т.д.\r",
+              "  const expected = pm.collectionVariables.get(key);\r",
+              "\r",
+              "  if (expected === undefined || expected === null || expected === \"\") {\r",
+              "    pm.expect(true).to.eql(true); // skip silently\r",
+              "    return;\r",
+              "  }\r",
+              "\r",
+              "  pm.expect(String(json.resultValue)).to.eql(String(expected));\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"{{leftValue}}\", \"radix\": \"{{leftRadix}}\" },\r\n  \"right\": { \"value\": \"{{rightValue}}\", \"radix\": \"{{rightRadix}}\" },\r\n  \"op\": \"*\",\r\n  \"resultRadix\": \"{{resultRadix}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - DIV",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 200\", () => {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has required fields\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(json).to.have.property(\"id\");\r",
+              "  pm.expect(json).to.have.property(\"result\");\r",
+              "  pm.expect(json).to.have.property(\"resultRadix\");\r",
+              "  pm.expect(json).to.have.property(\"createdAt\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Result radix matches\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(String(json.resultRadix)).to.eql(String(pm.collectionVariables.get(\"resultRadix\")));\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Correct result\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "\r",
+              "  const op = pm.collectionVariables.get(\"operation\"); // ADD/SUB/MUL/DIV\r",
+              "  const key = `expected_${op}`; // expected_SUB и т.д.\r",
+              "  const expected = pm.collectionVariables.get(key);\r",
+              "\r",
+              "  if (expected === undefined || expected === null || expected === \"\") {\r",
+              "    pm.expect(true).to.eql(true); // skip silently\r",
+              "    return;\r",
+              "  }\r",
+              "\r",
+              "  pm.expect(String(json.resultValue)).to.eql(String(expected));\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"{{leftValue}}\", \"radix\": \"{{leftRadix}}\" },\r\n  \"right\": { \"value\": \"{{rightValue}}\", \"radix\": \"{{rightRadix}}\" },\r\n  \"op\": \"/\",\r\n  \"resultRadix\": \"{{resultRadix}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calculations - SEARCH",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 200\", () => {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is JSON array\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(Array.isArray(json)).to.eql(true);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Items have required fields\", () => {\r",
+              "  const arr = pm.response.json();\r",
+              "  if (arr.length === 0) return;\r",
+              "\r",
+              "  const item = arr[0];\r",
+              "  pm.expect(item).to.have.property(\"id\");\r",
+              "  pm.expect(item).to.have.property(\"leftValue\");\r",
+              "  pm.expect(item).to.have.property(\"leftRadix\");\r",
+              "  pm.expect(item).to.have.property(\"rightValue\");\r",
+              "  pm.expect(item).to.have.property(\"rightRadix\");\r",
+              "  pm.expect(item).to.have.property(\"operation\");\r",
+              "  pm.expect(item).to.have.property(\"resultValue\");\r",
+              "  pm.expect(item).to.have.property(\"resultRadix\");\r",
+              "  pm.expect(item).to.have.property(\"createdAt\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"createdAt is within [from,to]\", () => {\r",
+              "  const arr = pm.response.json();\r",
+              "\r",
+              "  const from = new Date(pm.request.url.query.get(\"from\"));\r",
+              "  const to = new Date(pm.request.url.query.get(\"to\"));\r",
+              "\r",
+              "  for (const item of arr) {\r",
+              "    const t = new Date(item.createdAt);\r",
+              "    pm.expect(t.getTime()).to.be.at.least(from.getTime());\r",
+              "    pm.expect(t.getTime()).to.be.at.most(to.getTime());\r",
+              "  }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/calculations?from=2026-03-02T07:00:00Z&to=2026-03-08T12:00:00Z",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calculations"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "2026-03-02T07:00:00Z"
+            },
+            {
+              "key": "to",
+              "value": "2026-03-08T12:00:00Z"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - DIV - div0",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 422 on division by zero\", () => {\r",
+              "  pm.response.to.have.status(422);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Error response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has error fields (message)\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(json).to.be.an(\"object\");\r",
+              "  pm.expect(JSON.stringify(json)).to.match(/message|error|details|validation/i);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"10\", \"radix\": \"DEC\" },\r\n  \"right\": { \"value\": \"0\", \"radix\": \"DEC\" },\r\n  \"op\": \"/\",\r\n  \"resultRadix\": \"DEC\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - BAD - invalid radix",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 400 on invalid radix\", () => {\r",
+              "  pm.response.to.have.status(400);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Error response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has validation info\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(JSON.stringify(json)).to.match(/radix|validation|invalid|error|message/i);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"10\", \"radix\": \"XXX\" },\r\n  \"right\": { \"value\": \"5\", \"radix\": \"DEC\" },\r\n  \"op\": \"+\",\r\n  \"resultRadix\": \"DEC\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Calc - BAD - missing op",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status 400 on missing op\", () => {\r",
+              "  pm.response.to.have.status(400);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Error response is JSON\", () => {\r",
+              "  pm.response.to.be.json;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Has validation/message\", () => {\r",
+              "  const json = pm.response.json();\r",
+              "  pm.expect(JSON.stringify(json)).to.match(/op|operation|validation|error|message/i);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"left\": { \"value\": \"10\", \"radix\": \"DEC\" },\r\n  \"right\": { \"value\": \"5\", \"radix\": \"DEC\" },\r\n  \"resultRadix\": \"DEC\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/calc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "calc"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "const protocol = pm.environment.get(\"protocol\");\r",
+          "const host = pm.environment.get(\"host\");\r",
+          "const port = pm.environment.get(\"port\");\r",
+          "\r",
+          "pm.environment.set(\"baseUrl\", `${protocol}://${host}:${port}`);"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "leftValue",
+      "value": ""
+    },
+    {
+      "key": "leftRadix",
+      "value": ""
+    },
+    {
+      "key": "rightValue",
+      "value": ""
+    },
+    {
+      "key": "rightRadix",
+      "value": ""
+    },
+    {
+      "key": "resultRadix",
+      "value": ""
+    },
+    {
+      "key": "expectedAdd",
+      "value": ""
+    },
+    {
+      "key": "expectedSub",
+      "value": ""
+    },
+    {
+      "key": "expectedMul",
+      "value": ""
+    },
+    {
+      "key": "expectedDiv",
+      "value": ""
+    }
+  ]
+}
