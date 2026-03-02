@@ -1,22 +1,49 @@
-# Лабораторная работа 5 – Автоматизированное тестирование API в Postman
+## Preview
 
-Цель – познакомиться с возможностью автоматизированного тестирования API в Postman: environments, коллекции запросов, pre-request scripts, тесты, последовательная и параллельная нагрузка, экспорт коллекции в JSON.
+<p align="center">
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/1.png" alt="nahhh" width="800"/><br/>
+  
+</p>
 
-## 1. Запуск приложения
+---
+<p align="center">
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/2.png" alt="nahhh" width="800"/><br/>
+  
+</p>
 
-Приложение (Spring Boot) запускается локально и поднимает API на порту 8080.
+---
+<p align="center">
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/3.png" alt="nahhh" width="800"/><br/>
+  
+</p>
 
-Пример запуска:
+---
+<p align="center">
+  <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/4.png" alt="nahhh" width="800"/><br/>
+  
+</p>
+
+---
+
+Automated API Testing in Postman
+
+API in Postman: environments, request collections, pre-request scripts, tests, sequential and parallel load, export of collection to JSON.
+
+1. Application Startup
+
+The application (Spring Boot) runs locally and exposes the API on port 8080.
+
+Example startup command:
 
 - java -jar target/lab2-calculator-service-1.0.0.jar
 
-Базовый адрес для local:
+Base URL for local:
 
 - http://localhost:8080
 
-## 2. Environments
+2. Environments
 
-Созданы 2 окружения:
+Two environments were created:
 
 1. local
 
@@ -30,30 +57,32 @@
 - host = dev-server
 - port = 8080
 
-Переменная baseUrl формируется автоматически в pre-request скрипте коллекции.
+The baseUrl variable is automatically assembled in the collection-level pre-request script.
 
-## 3. Коллекция Postman
+3. Postman Collection
 
-Коллекция:
+Collection name:
 
 - lab5-calculator-api-tests
 
-В коллекции реализован pre-request script, который собирает baseUrl из переменных окружения.
+A collection-level pre-request script builds baseUrl from environment variables.
 
 Pre-request (collection level):
 
-- protocol берётся из environment
-- host берётся из environment
-- port берётся из environment
+- protocol is taken from the environment
+- host is taken from the environment
+- port is taken from the environment
 - baseUrl = ${protocol}://${host}:${port}
 
-В запросах вместо захардкоженного URL используется переменная:
+All requests use the variable:
 
 - {{baseUrl}}
 
-## 4. Запросы в коллекции
+instead of a hardcoded URL.
 
-Реализованы 5 основных запросов по заданию:
+4. Requests in the Collection
+
+Five main requests are implemented according to the assignment:
 
 1. Calc – ADD
 
@@ -68,7 +97,7 @@ Pre-request (collection level):
 3. Calc – MUL
 
 - POST {{baseUrl}}/api/calc
-- op = \*
+- op = *
 
 4. Calc – DIV
 
@@ -78,17 +107,17 @@ Pre-request (collection level):
 5. Calculations – SEARCH
 
 - GET {{baseUrl}}/api/calculations?from=...&to=...
-- В контроллере используется формат ISO_DATE_TIME для параметров from/to (OffsetDateTime).
+- The controller uses ISO_DATE_TIME format for from/to parameters (OffsetDateTime).
 
-Дополнительно добавлены негативные запросы для проверки ошибок:
+Additional negative requests were added to verify error handling:
 
-- Calc – DIV – div0 (деление на 0)
+- Calc – DIV – div0 (division by zero)
 - Calc – BAD – invalid radix
 - Calc – BAD – missing op
 
-## 5. Collection Variables (чтобы не дублировать body)
+5. Collection Variables (to avoid duplicating request body)
 
-В Collection Variables заданы значения для формирования тела запроса:
+Collection Variables were defined to construct the request body dynamically:
 
 - leftValue
 - leftRadix
@@ -96,52 +125,52 @@ Pre-request (collection level):
 - rightRadix
 - resultRadix
 
-Во всех Calc-запросах тело однотипное, отличается только op.
+All Calc requests share the same body structure; only the op field changes.
 
-## 6. Тесты (Post-response)
+6. Tests (Post-response Scripts)
 
-Для каждого запроса добавлены тесты в Scripts – Post-response (в новых версиях Postman это заменяет вкладку Tests).
+Each request contains tests in Scripts – Post-response (in recent Postman versions this replaces the old Tests tab).
 
-Позитивные тесты:
+Positive tests include:
 
-- проверка HTTP статуса (200)
-- проверка, что ответ JSON
-- проверка структуры ответа (id, resultValue, resultRadix, createdAt)
-- проверка корректности результата вычисления (для ADD/SUB/MUL/DIV)
-- для SEARCH – проверка, что ответ массив и что createdAt находится в диапазоне [from,to]
+- validation of HTTP status (200)
+- validation that response is JSON
+- validation of response structure (id, resultValue, resultRadix, createdAt)
+- validation of correct calculation result (for ADD/SUB/MUL/DIV)
+- for SEARCH – validation that response is an array and that createdAt is within the [from,to] range
 
-Негативные тесты:
+Negative tests include:
 
-- div0 – ожидается 422
-- invalid radix – ожидается 400
-- missing op – ожидается 400
+- div0 – expected 422
+- invalid radix – expected 400
+- missing op – expected 400
 
-## 7. Нагрузочное тестирование – последовательный запуск (1000 итераций)
+7. Load Testing – Sequential Execution (1000 Iterations)
 
-Запуск выполнен в Collection Runner (Functional), Iterations = 1000.
+Executed in Collection Runner (Functional mode), Iterations = 1000.
 
-Результат:
+Results:
 
 - Errors: 0
 - Avg response time: 8 ms
 - Duration: 14m 5s
 
-Вывод:
+Conclusion:
 
-- При последовательной нагрузке сервис стабилен
-- Ошибок нет
-- Среднее время ответа низкое
+- Under sequential load, the service is stable
+- No errors occurred
+- Average response time remains low
 
-## 8. Нагрузочное тестирование – параллельный запуск
+8. Load Testing – Parallel Execution
 
-Запуск выполнен в режиме Performance:
+Executed in Performance mode:
 
 - Load profile: Fixed
 - Virtual users: 10
 - Test duration: 2 mins
 - Environment: local
 
-Результат:
+Results:
 
 - Total requests sent: 5206
 - Requests/second: 40.93
@@ -151,24 +180,24 @@ Pre-request (collection level):
 - P99: 74 ms
 - Error rate: 37.40%
 
-Пояснение по error rate:
+Explanation of error rate:
 
-- В наборе запросов присутствуют негативные тесты, которые намеренно возвращают 4xx (div0, invalid radix, missing op)
-- В Performance-режиме такие ответы учитываются как ошибки на графиках, поэтому общий Error rate высокий и является ожидаемым при смешанном наборе позитивных и негативных сценариев
+- The request set includes negative test cases that intentionally return 4xx responses (div0, invalid radix, missing op)
+- In Performance mode, such responses are counted as errors in the charts, therefore the overall Error rate is high and expected when mixing positive and negative scenarios
 
-Вывод:
+Conclusion:
 
-- При параллельной нагрузке latency ожидаемо вырос (8 ms – 11 ms avg)
-- Появился высокий error rate из-за намеренных негативных запросов (ожидаемое поведение)
-- Сервис остаётся работоспособным под concurrency=10, критических 5xx не зафиксировано (при корректной интерпретации, что 4xx для negative-сценариев нормальны)
+- Under parallel load, latency increased slightly (8 ms → 11 ms avg)
+- High error rate is caused by intentional negative scenarios (expected behavior)
+- The service remains operational at concurrency=10, with no critical 5xx errors observed (when correctly interpreting 4xx responses for negative scenarios as valid outcomes)
 
-## 9. Артефакты в репозитории
+9. Artifacts in Repository
 
-Экспортирована коллекция Postman:
+The Postman collection was exported:
 
 - postman/lab5-calculator-api-tests.postman_collection.json
 
-Опционально экспортированы environments:
+Optionally exported environments:
 
 - postman/local.postman_environment.json
 - postman/dev.postman_environment.json
