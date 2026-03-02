@@ -130,7 +130,7 @@ This work confirms the importance of load testing for determining system scalabi
 - Spring Boot calculator application
 - PostgreSQL (local)
 
-## 📸 Project Preview
+## Preview
 
 <p align="center">
   <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/1.png" alt="nahhh" width="800"/><br/>
