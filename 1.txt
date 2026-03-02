@@ -1,0 +1,12 @@
+mvn clean package
+java -jar target/lab2-calculator-service-1.0.0.jar
+
+Invoke-RestMethod `
+  -Method Post `
+  -Uri "http://localhost:8080/api/calc" `
+  -ContentType "application/json" `
+  -Body '{"left":{"value":"101","radix":"BIN"},"right":{"value":"A","radix":"HEX"},"op":"+","resultRadix":"DEC"}'
+
+
+BDD:
+mvn -Dtest=RunCucumberTest clean test
