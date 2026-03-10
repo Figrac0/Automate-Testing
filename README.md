@@ -1,4 +1,4 @@
-# Multi-Level Testing of a Full-Stack Calculator System
+# Multi-Layer QA Pipeline for Full-Stack Applications
 
 A full-stack project emphasizing systematic software testing across multiple layers of an application.
 The repository integrates backend and frontend development with a focus on verification quality, test design, automation, and reproducibility.
