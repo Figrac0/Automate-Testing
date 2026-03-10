@@ -21,6 +21,192 @@ The core application is a multi-system computational engine. The main focus of t
 
 ---
 
+```text
+Файлы лабораторных 1-7
+│   .gitignore
+│
+├───back-calc_tests
+│   │   pom.xml
+│   │
+│   ├───.vscode
+│   │       settings.json
+│   │
+│   ├───assets
+│   │   ├───images
+│   │   │
+│   │   └───readme
+│   │           README.md
+│   │
+│   ├───jmeter
+│   │   │   lab4-calculator.jmx
+│   │   │   
+│   │   ├───data
+│   │   │       calc_div0.csv
+│   │   │       calc_ok.csv
+│   │   │       search_ops.csv
+│   │   │
+│   │   └───results
+│   ├───postman
+│   │   │   api-tests.postman_collection.json
+│   │   │   dev.postman_environment.json
+│   │   │   local.postman_environment.json
+│   │   │
+│   │   └───images
+│   │
+│   └───src
+│       ├───main
+│       │   ├───java
+│       │   │   └───com
+│       │   │       └───unik
+│       │   │           └───calculator
+│       │   │               │   Lab2CalculatorServiceApplication.java
+│       │   │               │
+│       │   │               ├───api
+│       │   │               │   │   ApiError.java
+│       │   │               │   │   CalculatorController.java
+│       │   │               │   │   GlobalExceptionHandler.java
+│       │   │               │   │
+│       │   │               │   └───dto
+│       │   │               │           CalcRequest.java
+│       │   │               │           CalcResponse.java
+│       │   │               │           CalculationDto.java
+│       │   │               │
+│       │   │               ├───core
+│       │   │               │       Calculator.java
+│       │   │               │       Operation.java
+│       │   │               │       Radix.java
+│       │   │               │
+│       │   │               └───db
+│       │   │                       CalculationEntity.java
+│       │   │                       CalculationRepository.java
+│       │   │
+│       │   └───resources
+│       │       │   application.yml
+│       │       │
+│       │       └───db
+│       │           └───migration
+│       │                   V1__create_calculations_table.sql
+│       │
+│       └───test
+│           ├───java
+│           │   └───com
+│           │       └───unik
+│           │           └───calculator
+│           │               │   CalculatorIT.java
+│           │               │
+│           │               └───bdd
+│           │                   │   CucumberSpringConfig.java
+│           │                   │   RunCucumberTest.java
+│           │                   │
+│           │                   ├───hooks
+│           │                   │       DbHooks.java
+│           │                   │
+│           │                   └───steps
+│           │                           ApiSteps.java
+│           │                           DbSteps.java
+│           │                           DtoTypes.java
+│           │                           TableClassSteps.java
+│           │
+│           └───resources
+│               │   application-test.yml
+│               │   junit-platform.properties
+│               │
+│               ├───features
+│               │       calculator.feature
+│               │
+│               └───fixtures
+│                       expected_search_add.json
+│                       input_calculations.json
+│
+└───client
+    │   .editorconfig
+    │   .gitignore
+    │   angular.json
+    │   cypress-run.log
+    │   cypress-stderr.log
+    │   cypress-stdout.log
+    │   cypress.config.ts
+    │   package-lock.json
+    │   package.json
+    │   tsconfig.app.json
+    │   tsconfig.json
+    │   tsconfig.spec.json
+    │
+    ├───.angular
+    │   └───cache
+    │
+    ├───.vscode
+    │       extensions.json
+    │       launch.json
+    │       tasks.json
+    │
+    ├───cypress
+    │   ├───e2e
+    │   │   ├───features
+    │   │   │       calculator.feature
+    │   │   │
+    │   │   └───step_definitions
+    │   │           calculator.steps.ts
+    │   │
+    │   ├───fixtures
+    │   │       example.json
+    │   │
+    │   └───support
+    │       │   commands.ts
+    │       │   e2e.ts
+    │       │
+    │       └───pages
+    │               calculator.page.ts
+    │
+    ├───dist
+    │   ├───lab6-calculator-angular
+    │   │   │   3rdpartylicenses.txt
+    │   │   │   prerendered-routes.json
+    │   │   │
+    │   │   └───browser
+    │   │           favicon.ico
+    │   │           index.html
+    │   │           main-XDZ4DJU2.js
+    │   │           polyfills-5CFQRCPP.js
+    │   │           styles-Y3REW7HZ.css
+    │   │
+    │   └───test-out
+    ├───public
+    │       favicon.ico
+    │
+    └───src
+        │   index.html
+        │   main.ts
+        │   styles.scss
+        │
+        ├───app
+        │       app.config.ts
+        │       app.html
+        │       app.scss
+        │       app.spec.ts
+        │       app.ts
+        │
+        ├───calculator
+        │       calculator.component.html
+        │       calculator.component.scss
+        │       calculator.component.spec.ts
+        │       calculator.component.ts
+        │
+        ├───directives
+        │       result-color.directive.spec.ts
+        │       result-color.directive.ts
+        │
+        ├───input-field
+        │       input-field.component.html
+        │       input-field.component.scss
+        │       input-field.component.spec.ts
+        │       input-field.component.ts
+        │
+        └───pipes
+                decimal-places.pipe.spec.ts
+                decimal-places.pipe.ts
+```
+
 
 ## Project Focus
 
