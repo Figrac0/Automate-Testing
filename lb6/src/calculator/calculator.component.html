@@ -1,0 +1,83 @@
+<div class="calculator">
+  <h1>Калькулятор</h1>
+
+  <div class="row">
+    <div class="col">
+      <app-input-field
+        label="Первое число"
+        [value]="leftValue"
+        [radix]="leftRadix"
+        (valueChange)="setLeftValue($event)"
+      />
+    </div>
+
+    <div class="col small">
+      <label>Система</label>
+      <select [ngModel]="leftRadix" (ngModelChange)="setLeftRadix($event)">
+        <option *ngFor="let radix of radixOptions" [value]="radix">
+          {{ radix }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row operation-row">
+    <div class="col">
+      <label>Операция</label>
+      <select [(ngModel)]="operation" (change)="onOperationChange()">
+        <option *ngFor="let op of operationOptions" [value]="op.value">
+          {{ op.label }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-input-field
+        label="Второе число"
+        [value]="rightValue"
+        [radix]="rightRadix"
+        [disabled]="false"
+        [forbidZero]="operation === '/'"
+        (valueChange)="setRightValue($event)"
+      />
+    </div>
+
+    <div class="col small">
+      <label>Система</label>
+      <select [ngModel]="rightRadix" (ngModelChange)="setRightRadix($event)">
+        <option *ngFor="let radix of radixOptions" [value]="radix">
+          {{ radix }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row result-radix-row">
+    <div class="col small">
+      <label>Система результата</label>
+      <select [(ngModel)]="resultRadix">
+        <option *ngFor="let radix of radixOptions" [value]="radix">
+          {{ radix }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <button class="calc-btn" (click)="calculate()" [disabled]="isCalculateDisabled()">
+    {{ loading ? 'Вычисление...' : 'Вычислить' }}
+  </button>
+
+  <div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <div class="result-box" *ngIf="result !== ''">
+    <div>Результат в системе {{ resultRadix }}: {{ result }}</div>
+    <div [appResultColor]="resultDecimalValue">
+      Результат в DEC:
+      {{ resultDecimalValue | decimalPlaces: 2 }}
+    </div>
+  </div>
+</div>
