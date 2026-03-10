@@ -1,9 +1,9 @@
 # Multi-Level Testing of a Full-Stack Calculator System
 
-A practice-oriented academic project focused on systematic software testing across multiple layers of a full-stack application.  
-The repository combines backend and frontend development with an emphasis on verification quality, test design, automation, and reproducibility.
+A full-stack project emphasizing systematic software testing across multiple layers of an application.
+The repository integrates backend and frontend development with a focus on verification quality, test design, automation, and reproducibility.
 
-The core application is a calculator that performs arithmetic operations across multiple numeral systems. However, the main value of the project is not the calculator itself, but the complete testing pipeline built around it: unit testing, integration testing, BDD testing, API testing, frontend unit testing, and end-to-end testing.
+The core application is a multi-system computational engine. The main focus of the project is the comprehensive testing pipeline: unit testing, integration testing, BDD testing, API testing, frontend unit testing, and end-to-end testing.
 
 ## 📸 Tests Preview
 
