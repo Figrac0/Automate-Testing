@@ -14,6 +14,7 @@ export class InputFieldComponent {
   @Input() radix = 'DEC';
   @Input() disabled = false;
   @Input() forbidZero = false;
+  @Input() inputTestId = '';
 
   @Output() valueChange = new EventEmitter<string>();
 
@@ -25,7 +26,11 @@ export class InputFieldComponent {
     this.valueChange.emit(result);
   }
 
-  sanitizeValue(value: string, radix: string = this.radix, forbidZero: boolean = this.forbidZero): string {
+  sanitizeValue(
+    value: string,
+    radix: string = this.radix,
+    forbidZero: boolean = this.forbidZero,
+  ): string {
     let next = value.toUpperCase().replace(/[^0-9A-F\-]/g, '');
 
     if (next.includes('-')) {

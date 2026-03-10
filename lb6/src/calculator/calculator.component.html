@@ -1,4 +1,4 @@
-<div class="calculator">
+<div class="calculator" data-cy="calculator-page">
   <h1>Калькулятор</h1>
 
   <div class="row">
@@ -7,13 +7,14 @@
         label="Первое число"
         [value]="leftValue"
         [radix]="leftRadix"
+        inputTestId="left-input"
         (valueChange)="setLeftValue($event)"
       />
     </div>
 
     <div class="col small">
       <label>Система</label>
-      <select [ngModel]="leftRadix" (ngModelChange)="setLeftRadix($event)">
+      <select data-cy="left-radix" [ngModel]="leftRadix" (ngModelChange)="setLeftRadix($event)">
         <option *ngFor="let radix of radixOptions" [value]="radix">
           {{ radix }}
         </option>
@@ -24,7 +25,7 @@
   <div class="row operation-row">
     <div class="col">
       <label>Операция</label>
-      <select [(ngModel)]="operation" (change)="onOperationChange()">
+      <select data-cy="operation-select" [(ngModel)]="operation" (change)="onOperationChange()">
         <option *ngFor="let op of operationOptions" [value]="op.value">
           {{ op.label }}
         </option>
@@ -40,13 +41,14 @@
         [radix]="rightRadix"
         [disabled]="false"
         [forbidZero]="operation === '/'"
+        inputTestId="right-input"
         (valueChange)="setRightValue($event)"
       />
     </div>
 
     <div class="col small">
       <label>Система</label>
-      <select [ngModel]="rightRadix" (ngModelChange)="setRightRadix($event)">
+      <select data-cy="right-radix" [ngModel]="rightRadix" (ngModelChange)="setRightRadix($event)">
         <option *ngFor="let radix of radixOptions" [value]="radix">
           {{ radix }}
         </option>
@@ -57,7 +59,7 @@
   <div class="row result-radix-row">
     <div class="col small">
       <label>Система результата</label>
-      <select [(ngModel)]="resultRadix">
+      <select data-cy="result-radix" [(ngModel)]="resultRadix">
         <option *ngFor="let radix of radixOptions" [value]="radix">
           {{ radix }}
         </option>
@@ -65,17 +67,23 @@
     </div>
   </div>
 
-  <button class="calc-btn" (click)="calculate()" [disabled]="isCalculateDisabled()">
+  <button
+    class="calc-btn"
+    data-cy="calculate-btn"
+    (click)="calculate()"
+    [disabled]="isCalculateDisabled()"
+  >
     {{ loading ? 'Вычисление...' : 'Вычислить' }}
   </button>
 
-  <div class="error" *ngIf="errorMessage">
+  <div class="error" data-cy="error-message" *ngIf="errorMessage">
     {{ errorMessage }}
   </div>
 
-  <div class="result-box" *ngIf="result !== ''">
-    <div>Результат в системе {{ resultRadix }}: {{ result }}</div>
-    <div [appResultColor]="resultDecimalValue">
+  <div class="result-box" data-cy="result-box" *ngIf="result !== ''">
+    <div data-cy="result-radix-text">Результат в системе {{ resultRadix }}: {{ result }}</div>
+
+    <div data-cy="result-dec-text" [appResultColor]="resultDecimalValue">
       Результат в DEC:
       {{ resultDecimalValue | decimalPlaces: 2 }}
     </div>
