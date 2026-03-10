@@ -1,0 +1,10 @@
+<div class="field">
+  <label>{{ label }}</label>
+  <input
+    type="text"
+    [value]="value"
+    [disabled]="disabled"
+    [attr.data-cy]="inputTestId"
+    (input)="onInput($event)"
+  />
+</div>

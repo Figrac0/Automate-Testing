@@ -1,0 +1,11 @@
+﻿[
+  {
+    "leftValue":"101",
+    "leftRadix":"BIN",
+    "rightValue":"A",
+    "rightRadix":"HEX",
+    "operation":"ADD",
+    "resultValue":"15",
+    "resultRadix":"DEC"
+  }
+]

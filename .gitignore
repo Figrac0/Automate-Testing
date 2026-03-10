@@ -1,0 +1,7 @@
+**/target/
+*.class
+*.jar
+*.war
+.vscode/
+.idea/
+client/cypress/screenshots/
