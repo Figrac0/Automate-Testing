@@ -34,11 +34,13 @@ automate-testing/
 │   ├── postman/              # Postman collections and environment files
 │   └── assets/               # Images and documentation related to backend/tests
 │
-│── client/                   # Frontend project (Angular + Cypress)
-    ├── src/                  # Angular application source code
-    ├── cypress/              # E2E tests using Cypress
-    ├── package.json          # Node dependencies and scripts for frontend
-    └── angular.json          # Angular CLI project configuration
+├── client/                   # Frontend project (Angular + Cypress)
+│   ├── src/                  # Angular application source code
+│   ├── cypress/              # E2E tests using Cypress
+│   ├── package.json          # Node dependencies and scripts for frontend
+│   └── angular.json          # Angular CLI project configuration
+│
+└── .gitignore                # Git ignore rules (exclude build artifacts, logs, etc.)
 ```
 
 
