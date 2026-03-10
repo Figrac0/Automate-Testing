@@ -293,6 +293,11 @@ ng test
 npm run e2e
 ```
 
+### Cypress interactive mode 
+```bash
+npm run cypress:open
+```
+
 ## Academic Positioning
 
 This repository should be viewed as a **testing-centered educational project** rather than a calculator showcase.
@@ -305,7 +310,4 @@ Its primary contribution is a unified view of software quality assurance across 
 
 The result is a reproducible, multi-level testing ecosystem suitable for academic demonstration, practical training, and further extension into more advanced QA workflows.
 
-### Cypress interactive mode 
-```bash
-npm run cypress:open
-```
+
