@@ -11,11 +11,11 @@ The core application is a multi-system computational engine. The main focus of t
 
 | 1 | 2 |
 | :---: | :---: |
-| <img src="https://github.com/Figrac0/Automate-Testing/blob/MVP-tests/client/cypress/99.png" width="400"/> | <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/2.png" width="400"/> |
+| <img src="https://github.com/Figrac0/Automate-Testing/blob/MVP-tests/client/cypress/99.png" width="400"/><br>Unit and end-to-end verification of frontend workflows using Cypress interactive mode (`cypress:open`). | <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/2.png" width="400"/><br>High-volume API load and stress analysis executed in Postman to assess server response stability under concurrent requests. |
 
 | 3 | 4 |
 | :---: | :---: |
-| <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/4.png" width="400"/> | <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/1.png" width="400"/> |
+| <img src="https://github.com/Figrac0/Automate-Testing/blob/Load_testing/assets/images/4.png" width="400"/><br>Performance evaluation and protocol behavior testing conducted in JMeter to identify throughput and latency characteristics. | <img src="https://github.com/Figrac0/Automate-Testing/blob/API_testing/images/1.png" width="400"/><br>Comprehensive execution of Postman collections to verify correctness and reproducibility of all backend API endpoints across multiple environments. |
 
 </div>
 
